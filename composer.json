@@ -1,0 +1,75 @@
+{
+    "name": "fuzzyma/contao-eloquent-example-project",
+    "type": "project",
+    "description": "Contao Open Source CMS",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ulrich-Matthias Schäfer",
+            "email": "ulima.ums@googlemail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "symfony/symfony": "~2.8|~3.0",
+        "symfony/monolog-bundle": "~2.8",
+        "symfony/swiftmailer-bundle": "~2.3",
+        "sensio/distribution-bundle": "~5.0",
+        "sensio/framework-extra-bundle": "^3.0.2",
+        "doctrine/doctrine-bundle": "~1.6",
+        "lexik/maintenance-bundle": "~2.0",
+        "contao/contao": "~4.2",
+        "incenteev/composer-parameter-handler": "~2.0",
+        "fuzzyma/contao-eloquent-bundle": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "classmap": [
+            "app/AppCache.php",
+            "app/AppKernel.php"
+        ]
+    },
+    "config": {
+        "preferred-install": {
+            "contao/*": "source",
+            "contao-components/*": "source",
+            "*": "dist"
+        },
+        "component-dir": "assets"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-develop": "4.2.x-dev"
+        },
+        "incenteev-parameters": {
+            "file": "app/config/parameters.yml",
+            "env-map": {
+                "secret": "CONTAO_RANDOM_SECRET"
+            }
+        },
+        "symfony-bin-dir": "app",
+        "symfony-var-dir": "app",
+        "symfony-assets-install": "relative"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Contao\\CoreBundle\\Composer\\ScriptHandler::generateRandomSecret",
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Contao\\CoreBundle\\Composer\\ScriptHandler::addDirectories",
+            "Contao\\CoreBundle\\Composer\\ScriptHandler::generateSymlinks"
+        ],
+        "post-update-cmd": [
+            "Contao\\CoreBundle\\Composer\\ScriptHandler::generateRandomSecret",
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Contao\\CoreBundle\\Composer\\ScriptHandler::addDirectories",
+            "Contao\\CoreBundle\\Composer\\ScriptHandler::generateSymlinks"
+        ]
+    }
+}
