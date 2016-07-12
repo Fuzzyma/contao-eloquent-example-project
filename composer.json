@@ -20,7 +20,8 @@
         "lexik/maintenance-bundle": "~2.0",
         "contao/contao": "~4.2",
         "incenteev/composer-parameter-handler": "~2.0",
-        "fuzzyma/contao-eloquent-example-project-bundle": "*"
+        "fuzzyma/contao-eloquent-example-project-bundle": "*",
+        "fuzzyma/contao-database-commands-bundle": "*"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

@@ -6,7 +6,10 @@ Example project for the use of eloquent models in contao
 
 ```bash
 composer create-project fuzzyma/contao-eloquent-example-project exampleProject
+app/console contao:setup
 ```
 
-Don't forget to run a database update with your installer.
-You can also do that by installing the [fuzzyma/contao-database-commands-bundle](https://github.com/Fuzzyma/contao-database-commands-bundle).
+The `app/console contao:setup` is provided from the
+[fuzzyma/contao-database-commands-bundle](https://github.com/Fuzzyma/contao-database-commands-bundle)
+and does the work from the install tool. This bundle is already required by the example project which makes the
+command accessible.
