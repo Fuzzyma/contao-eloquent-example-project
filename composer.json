@@ -1,7 +1,7 @@
 {
     "name": "fuzzyma/contao-eloquent-example-project",
     "type": "project",
-    "description": "Contao Open Source CMS",
+    "description": "Example Project which shows the eloquent features brought to you by the fuzzyma/contao-eloquent-bundle",
     "license": "MIT",
     "authors": [
         {
